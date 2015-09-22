@@ -4,4 +4,5 @@
     <string name="action_settings">Налаштування</string>
     <string name="title">Головне меню</string>
     <string name="title2">Меню вибору режиму</string>
+    <string name="settings_text">Налаштування змінене</string>
 </resources>

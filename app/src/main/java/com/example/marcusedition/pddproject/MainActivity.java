@@ -1,94 +1,75 @@
 package com.example.marcusedition.pddproject;
 
-import android.content.Context;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
-import android.view.animation.AnimationUtils;
-import android.widget.RelativeLayout;
-import android.widget.ViewFlipper;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements OnTouchListener
-{
-    private ViewFlipper flipper = null;
-    private float fromPosition;
+import java.util.Arrays;
+import java.util.List;
+
+public class MainActivity extends ListActivity {
+
+    String[] str = {
+            "§ 1. Загальні положення",
+            "§ 2. Обов’язки і права водіїв механічних транспортних засобів",
+            "§ 3. Рух транспортних засобів із спеціальними сигналами",
+            "§ 4. Обов’язки і права пішоходів",
+            "§ 5. Обов’язки і права пасажирів",
+            "§ 6. Вимоги до велосипедистів",
+            "§ 7. Вимоги до осіб, які керують гужовим транспортом, і погоничів тварин",
+            "§ 8. Регулювання дорожнього руху",
+            "§ 9. Попереджувальні сигнали",
+            "§ 10. Початок руху та зміна його напрямку",
+            "§ 11. Розташування транспортних засобів на дорозі",
+            "§ 12. Швидкість руху",
+            "§ 13. Дистанція, інтервал, зустрічний роз’їзд",
+            "§ 14. Обгін",
+            "§ 15. Зупинка і стоянка",
+            "§ 16. Проїзд перехресть",
+            "§ 17. Переваги маршрутних транспортних засобів",
+            "§ 18. Проїзд пішохідних переходів і зупинок транспортних засобів",
+            "§ 19. Kористування зовнішніми світловими приладами",
+            "§ 20. Рух через залізничні переїзди",
+            "§ 21. Перевезення пасажирів",
+            "§ 22. Перевезення вантажу",
+            "§ 23. Буксирування та експлуатація транспортних составів",
+            "§ 24. Навчальна їзда",
+            "§ 25. Рух транспортних засобів у колонах",
+            "§ 26. Рух у житловій та пішохідній зоні",
+            "§ 27. Рух по автомагістралях і дорогах для автомобілів",
+            "§ 28. Рух по гірських дорогах і на крутих спусках",
+            "§ 29. Міжнародний рух",
+            "§ 30. Номерні, розпізнавальні знаки, написи і позначення",
+            "§ 31. Технічний стан транспортних засобів та їх обладнання",
+            "§ 32. Питання, що потребують узгодження з ДАІ",
+            "§ 33. Дорожні знаки",
+            "§ 34. Дорожня розмітка"};
+
+
+    List<String> charts = Arrays.asList(str);
+
+    private ArrayAdapter mAdapter = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        // Устанавливаем listener касаний, для последующего перехвата жестов
-        RelativeLayout mainLayout = (RelativeLayout) findViewById(R.id.main_screen);
-        mainLayout.setOnTouchListener(this);
+        mAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, charts);
 
-        // Получаем объект ViewFlipper
-        flipper = (ViewFlipper) findViewById(R.id.flipper);
-
-        // Создаем View и добавляем их в уже готовый flipper
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        int layouts[] = new int[]{R.layout.choser_menu,R.layout.main_menu};
-        for (int layout : layouts) {
-            flipper.addView(inflater.inflate(layout, null));
-        }
+        setListAdapter(mAdapter);
+        this.startActivity(this.getIntent());
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        Toast.makeText(getApplicationContext(),
+                "Ви вибрали " + l.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent e)
-    {
-        findViewById(R.id.main_text).setVisibility(View.INVISIBLE);
-        findViewById(R.id.textMenu).setVisibility(View.VISIBLE);
-        findViewById(R.id.textChoser).setVisibility(View.VISIBLE);
-        switch (e.getAction())
-        {
-            case MotionEvent.ACTION_DOWN:
-                fromPosition = e.getX();
-                break;
-            case MotionEvent.ACTION_UP:
-                float toPosition = e.getX();
-                if (fromPosition > toPosition)
-                {
-                    flipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.go_next_in));
-                    flipper.setOutAnimation(AnimationUtils.loadAnimation(this,R.anim.go_next_out));
-                    flipper.showNext();
-                }
-                else if (fromPosition < toPosition)
-                {
-                    flipper.setInAnimation(AnimationUtils.loadAnimation(this,R.anim.go_prev_in));
-                    flipper.setOutAnimation(AnimationUtils.loadAnimation(this,R.anim.go_prev_out));
-                    flipper.showPrevious();
-                }
-            default:
-                break;
-        }
-        return true;
     }
 }
