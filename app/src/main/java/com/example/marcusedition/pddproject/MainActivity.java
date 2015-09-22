@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         setContentView(R.layout.activity_main);
 
         // Устанавливаем listener касаний, для последующего перехвата жестов
-        LinearLayout mainLayout = (LinearLayout) findViewById(R.id.main_screen);
+        RelativeLayout mainLayout = (RelativeLayout) findViewById(R.id.main_screen);
         mainLayout.setOnTouchListener(this);
 
         // Получаем объект ViewFlipper
