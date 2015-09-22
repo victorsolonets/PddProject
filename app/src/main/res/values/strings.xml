@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ПДД-2015</string>
+    <string name="app_name">ПДД2015</string>
     <string name="load_text">Правила Дорожнього Руху</string>
     <string name="action_settings">Налаштування</string>
     <string name="title">Головне меню</string>

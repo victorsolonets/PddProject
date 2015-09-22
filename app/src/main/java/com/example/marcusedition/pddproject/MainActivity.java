@@ -8,11 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener
+public class MainActivity extends AppCompatActivity implements OnTouchListener
 {
     private ViewFlipper flipper = null;
     private float fromPosition;
@@ -32,8 +33,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         // Создаем View и добавляем их в уже готовый flipper
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         int layouts[] = new int[]{R.layout.choser_menu,R.layout.main_menu};
-        for (int layout : layouts)
+        for (int layout : layouts) {
             flipper.addView(inflater.inflate(layout, null));
+        }
     }
 
 
@@ -59,15 +61,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onTouch(View view, MotionEvent event)
+    @Override
+    public boolean onTouch(View v, MotionEvent e)
     {
-        switch (event.getAction())
+        findViewById(R.id.main_text).setVisibility(View.INVISIBLE);
+        findViewById(R.id.textMenu).setVisibility(View.VISIBLE);
+        findViewById(R.id.textChoser).setVisibility(View.VISIBLE);
+        switch (e.getAction())
         {
             case MotionEvent.ACTION_DOWN:
-                fromPosition = event.getX();
+                fromPosition = e.getX();
                 break;
             case MotionEvent.ACTION_UP:
-                float toPosition = event.getX();
+                float toPosition = e.getX();
                 if (fromPosition > toPosition)
                 {
                     flipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.go_next_in));

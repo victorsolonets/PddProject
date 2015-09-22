@@ -7,6 +7,7 @@
     android:id="@+id/menu_screen">
 
     <TextView
+        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -15,7 +16,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:gravity="center"
-        android:id="@+id/textView"
+        android:id="@+id/textMenu"
         android:layout_gravity="center_horizontal" />
 
 </RelativeLayout>
