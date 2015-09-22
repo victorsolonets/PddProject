@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ПДД</string>
+    <string name="load_text">Правила Дорожнього Руху</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="title">Головне меню</string>
+    <string name="title2">Меню вибору режиму</string>
+</resources>
