@@ -6,8 +6,6 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -26,7 +24,6 @@ public class MainActivity extends Activity {
                         sleep(100);
                         logoTimer = logoTimer + 100;
                     }
-                    System.out.println("In onCreate Main");
                     startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                 }
                 catch (InterruptedException e)
@@ -41,5 +38,4 @@ public class MainActivity extends Activity {
         };
         logoTimer.start();
     }
-
 }
