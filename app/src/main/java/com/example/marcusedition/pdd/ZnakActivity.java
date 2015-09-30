@@ -40,7 +40,7 @@ public class ZnakActivity extends Activity {
         ZnakAdapter pagerAdapter = new ZnakAdapter(pages);
         ViewPager viewPager = new ViewPager(this);
         viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(1);
+        viewPager.setCurrentItem(0);
 
         setContentView(viewPager);
     }

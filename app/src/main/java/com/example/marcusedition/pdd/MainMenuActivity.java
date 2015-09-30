@@ -15,6 +15,7 @@ public class MainMenuActivity extends Activity {
     private Button buttonRools;
     private Button buttonZnak;
     private Button buttonTests;
+    private Button buttonExit;
     private Intent intent;
 
     @Override
@@ -26,16 +27,19 @@ public class MainMenuActivity extends Activity {
         buttonRools = (Button) findViewById(R.id.button_rools);
         buttonTests = (Button) findViewById(R.id.button_tests);
         buttonZnak = (Button) findViewById(R.id.button_znak);
+        buttonExit = (Button) findViewById(R.id.button_exit);
 
-        buttonStart.setBackgroundResource(R.drawable.button2);
-        buttonRools.setBackgroundResource(R.drawable.button2);
-        buttonTests.setBackgroundResource(R.drawable.button2);
-        buttonZnak.setBackgroundResource(R.drawable.button2);
+        buttonStart.setBackgroundResource(R.drawable.but);
+        buttonRools.setBackgroundResource(R.drawable.but);
+        buttonTests.setBackgroundResource(R.drawable.but);
+        buttonZnak.setBackgroundResource(R.drawable.but);
+        buttonExit.setBackgroundResource(R.drawable.but);
 
         buttonStart.setText(getResources().getString(R.string.start));
         buttonRools.setText(getResources().getString(R.string.rool));
         buttonZnak.setText(getResources().getString(R.string.znak));
         buttonTests.setText(getResources().getString(R.string.test));
+        buttonExit.setText(getResources().getString(R.string.exit));
     }
 
     public void startButton(View view){
@@ -45,10 +49,12 @@ public class MainMenuActivity extends Activity {
             buttonRools.setVisibility(View.VISIBLE);
             buttonTests.setVisibility(View.VISIBLE);
             buttonZnak.setVisibility(View.VISIBLE);
+            buttonExit.setVisibility(View.VISIBLE);
         } else {
             buttonRools.setVisibility(View.INVISIBLE);
             buttonTests.setVisibility(View.INVISIBLE);
             buttonZnak.setVisibility(View.INVISIBLE);
+            buttonExit.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -62,6 +68,8 @@ public class MainMenuActivity extends Activity {
             intent = new Intent(getApplicationContext(), ActivityWithTest.class);
         } else if (view.getId() == R.id.button_znak){
             intent = new Intent(getApplicationContext(), ZnakActivity.class);
+        } else if (view.getId() == R.id.button_exit) {
+            System.exit(0);
         }
         startActivity(intent);
     }

@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="10dip"
-    android:background="@drawable/back"
+    android:background="@drawable/road"
     android:orientation="vertical">
+
+    <ImageView
+        android:src="@drawable/strelka_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strelka_left"
+        android:layout_gravity="left|top"
+        android:layout_alignTop="@+id/strelka_right"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -12,20 +22,32 @@
         android:id="@+id/imageView"
         android:foregroundGravity="center_vertical"
         android:src="@drawable/znak_1_11"
-        android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/text_view"
+        android:layout_gravity="center"
+        android:layout_below="@+id/strelka_left"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/text_view"
-        android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="17dip"
+            android:text="@string/znak1_11"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:src="@drawable/strelka_right"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="15dip"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/znak1_11"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-</LinearLayout>
+        android:id="@+id/strelka_right"
+        android:layout_gravity="right|top"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/text_view"
+        android:layout_alignEnd="@+id/text_view" />
+
+
+</RelativeLayout>
