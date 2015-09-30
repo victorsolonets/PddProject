@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="right_answer"/>
+    <item type="id" name="good_answer" />
+    <item type="id" name="bad_answer" />
+</resources>

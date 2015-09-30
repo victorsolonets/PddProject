@@ -1,3 +1,2 @@
-# PddProject
-This project create by Android Studio.
-In future it was contain the traffic rules.
+PDD
+This project contain rool of PDD Ukraine.
