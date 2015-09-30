@@ -44,7 +44,10 @@ public class ActivityWithTest extends TabActivity {
                 tv[numbTag] = (TextView) findViewById(R.id.test_text);
                 group = (RadioGroup) findViewById(R.id.group);
                 fillTabs(tag, numbTag);
-                for (int i = 0; i < button.length; i++) group.addView(button[i]);
+                for (int i = 0; i < button.length; i++) {
+                    button[i].setTextColor(getResources().getColor(R.color.black));
+                    group.addView(button[i]);
+                }
                 tv[numbTag].setTextColor(getResources().getColor(R.color.black));
                 return tv[numbTag];
             }
