@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">ПДД</string>
-    <string name="load_text">Правил Дорожного Движения</string>
-    <string name="action_settings">Настройки</string>
-    <string name="title">Главное меню</string>
-    <string name="title2">Меню вибору режиму</string>
-</resources>

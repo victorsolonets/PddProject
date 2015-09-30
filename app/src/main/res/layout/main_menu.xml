@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_start"
+        android:src="@drawable/button2"
+        android:textStyle="bold"
+        android:textSize="@dimen/menu_text"
+        android:onClick="onClickButton"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_tests"
+        android:src="@drawable/button2"
+        android:onClick="onClickButton"
+        android:textSize="@dimen/menu_text"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginTop="70dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_rools"
+        android:src="@drawable/button2"
+        android:textSize="@dimen/rool_text"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:onClick="onClickButton"
+        android:layout_gravity="left|top" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_znak"
+        android:onClick="onClickButton"
+        android:src="@drawable/button2"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        android:textSize="@dimen/menu_text"
+        android:layout_marginBottom="68dp"
+        android:layout_gravity="left|bottom" />
+
+</FrameLayout>
