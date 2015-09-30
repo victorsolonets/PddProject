@@ -33,27 +33,5 @@ public class Chapter extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-//        public void readFile(File file)
-//        {
-//            org.apache.poi.hwpf.extractor.WordExtractor extractor = null;
-//            try
-//            {
-//                file = new File("c:\\New.doc");
-//                FileInputStream fis = new FileInputStream(file.getAbsolutePath());
-//                org.apache.poi.hwpf.extractor.HWPFDocument document = new HWPFDocument(fis);
-//                extractor = new org.apache.poi.hwpf.extractor.WordExtractor(document);
-//                String[] fileData = extractor.getParagraphText();
-//                for (int i = 0; i < fileData.length; i++)
-//                {
-//                    if (fileData[i] != null)
-//                        System.out.println(fileData[i]);
-//                }
-//            }
-//            catch (Exception exep)
-//            {
-//                exep.printStackTrace();
-//            }
-//        }
     }
 }

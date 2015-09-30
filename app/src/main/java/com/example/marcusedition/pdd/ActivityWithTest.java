@@ -65,7 +65,6 @@ public class ActivityWithTest extends TabActivity {
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                Log.i("tag", checkedId + "");
                 int nextTab = (Integer.parseInt(tabHost.getCurrentTabTag()) + 1);
                 System.out.println(String.valueOf(nextTab));
                 if (group.getCheckedRadioButtonId() == R.id.right_answer) {
@@ -75,7 +74,7 @@ public class ActivityWithTest extends TabActivity {
                     tabHost.getTabWidget().getChildTabViewAt(nextTab - 2).setBackground(getResources().getDrawable(R.color.red));
                 }
                 group.removeAllViews();
-                if (nextTab == 21) {
+                if (nextTab == COUNT_QUESTION + 1) {
                     showDialog(1);
                 }
 
@@ -278,7 +277,6 @@ public class ActivityWithTest extends TabActivity {
     @Override
     protected Dialog onCreateDialog(int id) {
         if (id == 1) {
-            Log.d("Dialog", "Create");
             AlertDialog.Builder adb = new AlertDialog.Builder(this);
             adb.setTitle("Кінець тесту");
             adb.setMessage("Ви набрали " + countAnswer + " балів.");
