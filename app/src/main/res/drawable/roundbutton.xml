@@ -1,10 +1,10 @@
 <shape
-    android:shape="oval"
+    android:shape="rectangle"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:bottomRightRadius="180dip"
-        android:bottomLeftRadius="180dip"
-        android:topRightRadius="180dip"
-        android:topLeftRadius="180dip"/>
+    <corners android:bottomRightRadius="18dip"
+        android:bottomLeftRadius="18dip"
+        android:topRightRadius="18dip"
+        android:topLeftRadius="18dip"/>
 
-    <solid android:color="#6E6E6E"/>
+    <solid android:color="#88888888"/>
     </shape>

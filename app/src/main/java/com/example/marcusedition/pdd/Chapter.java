@@ -13,6 +13,12 @@ import java.io.InputStream;
  */
 public class Chapter extends AppCompatActivity {
 
+    /**
+     * Метод для створення activity та залежностей
+     * В методі просто створюємо нову активність і в ній приймаємо
+     * дані про номер глави і зчитуємо відповідний файл з теорією
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

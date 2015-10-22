@@ -5,8 +5,8 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.marcusedition.pdd"
-        minSdkVersion 14
+        applicationId "com.example.marcusedition.pdrapplication"
+        minSdkVersion 7
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

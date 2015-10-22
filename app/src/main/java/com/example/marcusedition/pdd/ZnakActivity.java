@@ -15,7 +15,14 @@ import java.util.List;
  * Created by victor on 27.09.15.
  */
 public class ZnakActivity extends Activity {
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     * Метод для зв'язування даних по знакам та картинок,
+     * які є в папці та відображення всього разом на дану сторінку
+     * з можливістю переміщатись шляхом перетаскування view
+     *
+     */
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

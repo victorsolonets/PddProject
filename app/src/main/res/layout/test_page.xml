@@ -30,7 +30,7 @@
                     android:id="@+id/test_text"
                     android:layout_weight="0.54"
                     android:layout_gravity="center"
-                    android:paddingLeft="10sp"/>
+                    android:paddingLeft="20sp"/>
             </FrameLayout>
 
             <RadioGroup

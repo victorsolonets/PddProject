@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dip"
+    android:background="@drawable/road"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <ImageView
+        android:src="@drawable/strelka_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strelka_left"
+        android:layout_gravity="left|top"
+        android:layout_alignTop="@+id/strelka_right"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <ImageView
+        android:src="@drawable/strelka_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strelka_right"
+        android:layout_gravity="right|top"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/text_view"
+        android:layout_alignEnd="@+id/text_view" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:foregroundGravity="center_vertical"
+        android:src="@drawable/znak_1_11"
+        android:layout_gravity="center"
+        android:layout_alignTop="@+id/strelka_right"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="17dip"
+        android:text="@string/znak1_11"
+        android:layout_gravity="bottom"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

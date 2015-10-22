@@ -4,8 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+/**
+ * Created by victor on 25.09.15.
+ */
 public class MainActivity extends Activity {
 
+    /**
+     * Метод для імітації завантаження даних додатком
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -24,6 +31,7 @@ public class MainActivity extends Activity {
                         sleep(100);
                         logoTimer = logoTimer + 100;
                     }
+                    finish();
                     startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                 }
                 catch (InterruptedException e)
