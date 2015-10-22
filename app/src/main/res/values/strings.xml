@@ -279,7 +279,7 @@
     <string name="znak2_7">Позначає бордюри в місцях, де заборонено стоянку транспортних засобів.</string>
     <string name="start">Старт</string>
     <string name="rool">Правила</string>
-    <string name="znak">Знаки</string>
+    <string name="znak">Розмітка</string>
     <string name="test">Тести</string>
     <string name="exit">Вийти</string>
 </resources>

@@ -15,10 +15,17 @@ import java.util.List;
  */
 public class ListMenuActivity extends ListActivity {
 
+    /**
+     * Дані для роботи зі списком
+     */
     private Intent intent;
     private String[] str = new String[34];
     private ArrayAdapter mAdapter = null;
 
+    /**
+     * Метод для створення activity
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +38,9 @@ public class ListMenuActivity extends ListActivity {
         setListAdapter(mAdapter);
     }
 
+    /**
+     * Заповнення всіх назв глав - зчитується з файлу xml
+     */
     private void fillList() {
         str[0] = getResources().getString(R.string.chapter1);
         str[1] = getResources().getString(R.string.chapter2);
@@ -69,6 +79,13 @@ public class ListMenuActivity extends ListActivity {
     }
 
 
+    /**
+     * Обробка натискання на вибраний елемент списку і передача в нього номеру в списку
+     * @param l
+     * @param v
+     * @param position
+     * @param id
+     */
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
