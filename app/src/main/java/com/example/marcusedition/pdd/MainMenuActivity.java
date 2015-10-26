@@ -144,26 +144,26 @@ public class MainMenuActivity extends Activity {
     /**
      * Дія при натисканні на кнопку повернення з головного меню
      */
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Вихід")
-                .setMessage("Ви впевнені, що хочете вийти?")
-                .setPositiveButton("Так", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                        if (drawer.isDrawerOpen(GravityCompat.START)) {
-                            drawer.closeDrawer(GravityCompat.START);
-                        } else {
-                            MainMenuActivity.super.onBackPressed();
-                        }
-                        finish();
-                    }
-                })
-                .setNegativeButton("Ні", null)
-                .show();
-    }
+//    @Override
+//    public void onBackPressed() {
+//        new AlertDialog.Builder(this)
+//                .setIcon(android.R.drawable.ic_dialog_alert)
+//                .setTitle("Вихід")
+//                .setMessage("Ви впевнені, що хочете вийти?")
+//                .setPositiveButton("Так", new DialogInterface.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.);
+//                        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        } else {
+//                            MainMenuActivity.super.onBackPressed();
+//                        }
+//                        finish();
+//                    }
+//                })
+//                .setNegativeButton("Ні", null)
+//                .show();
+//    }
 }

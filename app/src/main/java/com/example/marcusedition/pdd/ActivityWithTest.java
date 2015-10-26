@@ -351,27 +351,27 @@ public class ActivityWithTest extends TabActivity {
      * @param id
      * @return
      */
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        if (id == 1) {
-            AlertDialog.Builder adb = new AlertDialog.Builder(this);
-            adb.setTitle("Вихід");
-            adb.setMessage("Ви впевнені що хочете вийти з тесту?");
-            adb.setPositiveButton("Так", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    System.exit(0);
-                }
-            });
-            adb.setNegativeButton("Ні", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    return;
-                }
-            });
-            dialog = adb.create();
-            return dialog;
-        }
-        return super.onCreateDialog(id);
-    }
+//    @Override
+//    protected Dialog onCreateDialog(int id) {
+//        if (id == 1) {
+//            AlertDialog.Builder adb = new AlertDialog.Builder(this);
+//            adb.setTitle("Вихід");
+//            adb.setMessage("Ви впевнені що хочете вийти з тесту?");
+//            adb.setPositiveButton("Так", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    System.exit(0);
+//                }
+//            });
+//            adb.setNegativeButton("Ні", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    return;
+//                }
+//            });
+//            dialog = adb.create();
+//            return dialog;
+//        }
+//        return super.onCreateDialog(id);
+//    }
 }
